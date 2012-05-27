@@ -87,7 +87,7 @@ make ``setup.cfg`` file like (hyphens becomes underscores)::
 You can make a shorthand alias as well::
 
     [aliases]
-    release = sdist upload register
+    release = sdist github_upload register
 
 
 Author and license
