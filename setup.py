@@ -27,7 +27,7 @@ def readme():
 
 setup(name='github-distutils',
       description='Distribute/setuptools/distutils command for GitHub. '
-                  'You can use Bitbucket downloads instead of PyPI downloads '
+                  'You can use GitHub downloads instead of PyPI downloads '
                   'for release.',
       version=__version__,
       long_description=readme(),
