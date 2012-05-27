@@ -122,9 +122,6 @@ class GitHubClient(object):
                     ('file', (result['name'], result['mime_type'], file_))
                 ]
                 s3_mimetype, s3_body = make_multipart_formdata(s3_values)
-                print s3_mimetype
-                print
-                print s3_body
             s3_request = urllib2.Request(result['s3_url'],
                                          headers={'Content-Type': s3_mimetype},
                                          data=s3_body)
@@ -172,14 +169,7 @@ class github_upload(Command):
         gh = GitHubClient(self.username, self.password, self.repository)
         sdist_url = None
         for command, pyversion, filename in self.distribution.dist_files:
-            try:
-                url = gh.upload(filename)
-            except Exception as e:
-                import traceback
-                traceback.print_exc()
-                print e.code
-                print e.info()
-                raise
+            url = gh.upload(filename)
             if command == 'sdist':
                 sdist_url = url
         if sdist_url:
