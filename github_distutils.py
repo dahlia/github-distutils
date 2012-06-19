@@ -154,7 +154,7 @@ class github_upload(Command):
         self.password = ''
 
     def finalize_options(self):
-        if not re.match(r'^[-_.a-z]+/[-_.a-z]+$', self.repository):
+        if not re.match(r'^[-_.a-zA-Z]+/[-_.a-zA-Z]+$', self.repository):
             raise DistutilsOptionError('-R/--repository option is incorrect')
         if not self.username:
             self.username = raw_input('GitHub username: ')
