@@ -44,7 +44,7 @@ setup(name='github-distutils',
           'github_upload = github_distutils:github_upload'
       ]},
       classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Framework :: Setuptools Plugin',
         'Intended Audience :: Developers',

@@ -21,7 +21,7 @@ __author__ = 'Hong Minhee'
 __email__ = 'minhee' '@' 'dahlia.kr'
 __copyright__ = 'Copyright 2012, Hong Minhee'
 __license__ = 'Public Domain'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 
 class GitHubRequest(urllib2.Request):

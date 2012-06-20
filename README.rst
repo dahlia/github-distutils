@@ -115,3 +115,22 @@ if you are using Bitbucket instead of GitHub.
 
 .. _bitbucket-distutils: https://bitbucket.org/dahlia/bitbucket-distutils
 
+
+Changelog
+---------
+
+Version 0.1.1
+'''''''''''''
+
+Released on June 20, 2012.  Beta version.
+
+- Allow upper cases for GitHub repository names.
+  [`#1`__ by Xavier Barbosa]
+
+__ https://github.com/dahlia/github-distutils/pull/1
+
+
+Version 0.1.0
+'''''''''''''
+
+Released on May 27, 2012.  First alpha version.
