@@ -50,18 +50,24 @@ def make_multipart_formdata(values):
     content_type = 'multipart/form-data; boundary=' + boundary
     def parts():
         for field, value in values:
+            field = str(field)
             yield '--' + boundary
             if isinstance(value, basestring):
                 yield 'Content-Disposition: form-data; name="' + field + '"'
                 yield ''
-                yield value
+                yield str(value)
             else:
                 filename, mimetype, file_ = value
                 yield ('Content-Disposition: form-data; name="' + field +
-                       '"; filename="' + filename + '"')
-                yield 'Content-Type: ' + mimetype
+                       '"; filename="' + str(filename) + '"')
+                yield 'Content-Type: ' + str(mimetype)
                 yield ''
-                yield file_.read()
+                while 1:
+                    chunk = file_.read(4096)
+                    if chunk:
+                        yield chunk
+                    else:
+                        break
         yield '--' + boundary + '--'
         yield ''
     return content_type, '\r\n'.join(parts())
@@ -122,7 +128,7 @@ class GitHubClient(object):
                     ('file', (result['name'], result['mime_type'], file_))
                 ]
                 s3_mimetype, s3_body = make_multipart_formdata(s3_values)
-            s3_request = urllib2.Request(result['s3_url'],
+            s3_request = urllib2.Request(str(result['s3_url']),
                                          headers={'Content-Type': s3_mimetype},
                                          data=s3_body)
             response = urllib2.urlopen(s3_request)

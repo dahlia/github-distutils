@@ -126,6 +126,7 @@ Released on June 20, 2012.  Beta version.
 
 - Allow upper cases for GitHub repository names.
   [`#1`__ by Xavier Barbosa]
+- Windows compatibility: fixed ``UnicodeDecodeError`` for uploads.
 
 __ https://github.com/dahlia/github-distutils/pull/1
 
