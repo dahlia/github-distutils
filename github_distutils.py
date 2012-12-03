@@ -153,7 +153,7 @@ class github_upload(Command):
         ('username=', 'u', 'GitHub username'),
         ('password=', 'p', 'GitHub password')
     ]
-    USERNAME_RE = re.compile(r'^[-_.a-zA-Z]+/[-_.a-zA-Z]+$')
+    USERNAME_RE = re.compile(r'^[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+$')
 
     def initialize_options(self):
         self.repository = ''
