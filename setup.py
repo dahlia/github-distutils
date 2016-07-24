@@ -2,6 +2,7 @@ from __future__ import with_statement
 
 import os.path
 import sys
+import warnings
 try:
     from setuptools import setup
 except ImportError:
@@ -23,6 +24,13 @@ def readme():
             return f.read()
     except (IOError, OSError):
         return ''
+
+
+warnings.warn('''
+This project is abandoned, and we recommend not to use this anymore. \
+Because PyPI and pip disallows to download package distributions \
+from other than official PyPI for security reasons.\
+''', DeprecationWarning)
 
 
 setup(name='github-distutils',
@@ -57,4 +65,3 @@ setup(name='github-distutils',
         'Topic :: Software Development',
         'Topic :: System :: Software Distribution'
       ])
-

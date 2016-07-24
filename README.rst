@@ -1,6 +1,14 @@
 github-distutils
 ================
 
+.. warning::
+
+   This project is abandoned, and we recommend not to use this anymore.
+   Because PyPI and pip_ disallows to download package distributions
+   from other than official PyPI for security reasons.
+
+.. _pip: http://pip-installer.org/
+
 Intro
 -----
 
